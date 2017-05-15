@@ -1,0 +1,31 @@
+<md-grid-list cols="2" rowHeight="2:1">
+  <md-grid-tile>
+    <div style="display: block; max-width: 100%; max-height: 100%;">
+      <canvas style="max-height: 100%; height: 100%; min-height: 100%;"
+              baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </md-grid-tile>
+  <md-grid-tile>
+    <div style="display: block; max-width: 100%; max-height: 100%;">
+      <canvas style="max-height: 100%; height: 100%; min-height: 100%;"
+              baseChart
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </md-grid-tile>
+  <md-grid-tile>
+    <md-card style="flex: 1 1">
+      <h1>For more examples check <a target="_blank" href="http://valor-software.com/ng2-charts/">ng2-charts</a></h1>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>
