@@ -5,6 +5,7 @@ import {NgModule} from '@angular/core';
 import {PageNotFoundComponent} from './not-found.component';
 import {ButtonsComponent} from './buttons/buttons.component';
 import {GalleryComponent} from './gallery/gallery.component';
+import {DialogComponent} from './dialog/dialog.component';
 const appRoutes: Routes = [
   {
     path: 'home',
@@ -18,6 +19,10 @@ const appRoutes: Routes = [
   {
     path: 'gallery',
     component: GalleryComponent,
+  },
+  {
+    path: 'dialog',
+    component: DialogComponent,
   },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

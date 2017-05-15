@@ -1,0 +1,32 @@
+<div class="ng-dialog-container">
+    <div class="loadWrapper" *ngIf="loading">
+        <md-spinner class="loaderCenter"></md-spinner>
+    </div>
+    <md-toolbar class="ng-md-toolbar">
+        <button *ngIf="sidebarPortal" md-mini-fab class="app-icon-button" (click)="sidenav.toggle()">
+            <md-icon>menu</md-icon>
+        </button>
+        <ng-dialog-header-left-host [content]="headerLeftPortal.content"></ng-dialog-header-left-host>
+        <span class="app-toolbar-filler"></span>
+        <ng-dialog-header-right-host [content]="headerRightPortal.content"></ng-dialog-header-right-host>
+        <button md-mini-fab class="app-icon-button" (click)="dialogRef.close()">
+            <md-icon>close</md-icon>
+        </button>
+    </md-toolbar>
+    <md-sidenav-container class="ng-dialog-sidenav-layout">
+
+        <md-sidenav *ngIf="sidebarPortal" mode="side" opened="true" style="width: 240px;" class="app-sidenav">
+            <ng-dialog-sidebar-host [content]="sidebarPortal.content"></ng-dialog-sidebar-host>
+        </md-sidenav>
+
+        <div class="example-scrolling-content">
+            <ng-dialog-content-host [content]="contentPortal.content"></ng-dialog-content-host>
+        </div>
+
+    </md-sidenav-container>
+    <md-toolbar class="ng-md-toolbar">
+        <ng-dialog-footer-left-host [content]="footerLeftPortal.content"></ng-dialog-footer-left-host>
+        <span class="app-toolbar-filler"></span>
+        <ng-dialog-footer-right-host [content]="footerRightPortal.content"></ng-dialog-footer-right-host>
+    </md-toolbar>
+</div>

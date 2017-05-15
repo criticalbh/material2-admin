@@ -11,7 +11,7 @@ import {
   MdToolbarModule,
   MdMenuModule,
   MdIconModule,
-  MdListModule, MdCardModule, MdGridListModule
+  MdListModule, MdCardModule, MdGridListModule, MdDialogModule
 } from '@angular/material';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -20,6 +20,10 @@ import {ButtonsComponent} from './buttons/buttons.component';
 import {ChartsModule} from 'ng2-charts';
 import { GalleryComponent } from './gallery/gallery.component';
 import {NgGalleryModule} from './ng-gallery/ng-gallery.module';
+import {NgDialogModule} from './ng-dialog/ng-dialog.module';
+import { DialogComponent } from './dialog/dialog.component';
+import { DialogBoxComponent } from './dialog/dialog-box/dialog-box.component';
+import { StandardDialogComponent } from './dialog/standard-dialog/standard-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import {NgGalleryModule} from './ng-gallery/ng-gallery.module';
     DashboardComponent,
     PageNotFoundComponent,
     ButtonsComponent,
-    GalleryComponent
+    GalleryComponent,
+    DialogComponent,
+    DialogBoxComponent,
+    StandardDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +50,12 @@ import {NgGalleryModule} from './ng-gallery/ng-gallery.module';
     MdIconModule,
     MdListModule,
     MdCardModule,
+    MdDialogModule,
     MdGridListModule,
-    NgGalleryModule
+    NgGalleryModule,
+    NgDialogModule,
   ],
+  entryComponents: [DialogBoxComponent, StandardDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
