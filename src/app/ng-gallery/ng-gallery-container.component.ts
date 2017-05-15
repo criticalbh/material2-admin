@@ -1,6 +1,6 @@
 import {Component, OnInit, QueryList, ContentChildren, Input} from '@angular/core';
 import {GalleryItemComponent} from './ng-gallery-item.component';
-import {MdDialog, MdDialogRef} from '@angular/material';
+import {MdDialog, MdDialogRef, MdDialogConfig} from '@angular/material';
 import {PicturePreviewDialog} from './picture-preview.dialog';
 
 
@@ -33,9 +33,13 @@ export class GalleryContainerComponent implements OnInit {
   }
 
   openDialog(picItem: GalleryItemComponent) {
+    let config: MdDialogConfig = new MdDialogConfig();
+    config.height = '95%';
+    config.width = '80%';
+
     this.currpic = picItem;
     this.currIndex = this.findPicIndex();
-    this.dialogRef = this.dialog.open(PicturePreviewDialog);
+    this.dialogRef = this.dialog.open(PicturePreviewDialog, config);
     this.dialogRef.componentInstance.imgUrl = picItem.src;
 
     this.dialogRef.componentInstance.navigateLeft.subscribe(() => {

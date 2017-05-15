@@ -7,7 +7,6 @@ export class NgBaseDialog<T> implements OnInit {
   ngOnInit() {
     let mdDialogContainer = this.elementRef.nativeElement.parentElement;
     this.renderer.setStyle(mdDialogContainer, 'height', '100%');
-    console.log(mdDialogContainer);
     this.renderer.setStyle(mdDialogContainer, 'padding', '0');
   }
 }
