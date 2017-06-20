@@ -24,6 +24,7 @@ import {NgDialogModule} from './ng-dialog/ng-dialog.module';
 import { DialogComponent } from './dialog/dialog.component';
 import { DialogBoxComponent } from './dialog/dialog-box/dialog-box.component';
 import { StandardDialogComponent } from './dialog/standard-dialog/standard-dialog.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { StandardDialogComponent } from './dialog/standard-dialog/standard-dialo
     MdGridListModule,
     NgGalleryModule,
     NgDialogModule,
+    FlexLayoutModule
   ],
   entryComponents: [DialogBoxComponent, StandardDialogComponent],
   providers: [],

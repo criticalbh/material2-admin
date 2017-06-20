@@ -1,7 +1,3 @@
-<style>
-
-
-</style>
 <md-toolbar color="primary" class="navbar">
   <button class="app-icon-button" (click)="sidenav.toggle()">
     <i class="material-icons app-toolbar-menu">menu</i>
@@ -33,19 +29,22 @@
 </md-toolbar>
 <md-sidenav-container fullscreen style="top: 64px !important;">
 
-  <md-sidenav mode="side" opened="true" #sidenav class="example-sidenav"
+  <md-sidenav [mode]="media.isActive('lg') ? 'side' : 'over'" [opened]="media.isActive('lg') ? true : false" #sidenav
+              class="example-sidenav"
               style="width: 240px; box-shadow: 3px 0 6px rgba(0,0,0,.24);">
-    <md-list>
-      <h3 md-subheader class="sidebar-header">Home</h3>
+    <h3 md-subheader class="sidebar-header sidebar-title">Home</h3>
+    <md-list style="padding-top: 0;">
       <md-list-item routerLink="/home" routerLinkActive="sidebar-list-item-active" class="sidebar-list-item">
         <a class="navbar-link">Dashboard</a>
       </md-list-item>
-      <md-divider></md-divider>
-      <h3 class="sidebar-header" md-subheader>Components</h3>
+    </md-list>
+    <md-divider></md-divider>
+    <h3 class="sidebar-header sidebar-title" md-subheader>Components</h3>
+    <md-list style="padding-top: 0;">
       <md-list-item class="sidebar-list-item" routerLink="/gallery" routerLinkActive="sidebar-list-item-active">
         <a class="navbar-link">Gallery</a>
       </md-list-item>
-      <md-list-item  routerLink="/dialog" routerLinkActive="sidebar-list-item-active" class="sidebar-list-item">
+      <md-list-item routerLink="/dialog" routerLinkActive="sidebar-list-item-active" class="sidebar-list-item">
         <a class="navbar-link">Dialog</a>
       </md-list-item>
       <md-list-item routerLink="buttons" routerLinkActive="sidebar-list-item-active" class="sidebar-list-item">

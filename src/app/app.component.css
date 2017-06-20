@@ -81,23 +81,6 @@ md-sidenav-layout.m2app-dark {
   color: white;
 }
 
-.app-icon-button {
-  box-shadow: none;
-  user-select: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  filter: none;
-  font-weight: normal;
-  height: auto;
-  line-height: inherit;
-  margin: 0;
-  min-width: 0;
-  padding: 0;
-  text-align: left;
-  text-decoration: none;
-}
-
 .navbar {
   position: fixed;
   z-index: 2;
@@ -142,6 +125,16 @@ md-sidenav-layout.m2app-dark {
   text-transform: uppercase;
 }
 
+.sidebar-title {
+  border: none;
+  font-size: 10px;
+  letter-spacing: 1px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 16px;
+}
 .navbar-link {
   box-sizing: border-box;
   display: block;
@@ -164,4 +157,10 @@ md-sidenav-layout.m2app-dark {
   background-color: rgba(0,0,0,.04) !important;
   color: #3f51b5 !important;
   font-weight: bold;
+}
+.app-action {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
