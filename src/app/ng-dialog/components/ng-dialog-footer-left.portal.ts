@@ -9,9 +9,9 @@ export class NgDialogFooterLeftPortal implements OnInit {
 
     @ViewChild(TemplateRef) _content: TemplateRef<any>;
 
-    private _contentPortal: TemplatePortal = null;
+    private _contentPortal: TemplatePortal<any> = null;
 
-    get content(): TemplatePortal {
+    get content(): TemplatePortal<any> {
         return this._contentPortal;
     }
 

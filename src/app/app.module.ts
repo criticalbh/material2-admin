@@ -18,8 +18,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {PageNotFoundComponent} from './not-found.component';
 import {ButtonsComponent} from './buttons/buttons.component';
 import {ChartsModule} from 'ng2-charts';
-import { GalleryComponent } from './gallery/gallery.component';
-import {NgGalleryModule} from './ng-gallery/ng-gallery.module';
 import {NgDialogModule} from './ng-dialog/ng-dialog.module';
 import { DialogComponent } from './dialog/dialog.component';
 import { DialogBoxComponent } from './dialog/dialog-box/dialog-box.component';
@@ -32,7 +30,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     DashboardComponent,
     PageNotFoundComponent,
     ButtonsComponent,
-    GalleryComponent,
     DialogComponent,
     DialogBoxComponent,
     StandardDialogComponent
@@ -53,7 +50,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MdCardModule,
     MdDialogModule,
     MdGridListModule,
-    NgGalleryModule,
     NgDialogModule,
     FlexLayoutModule
   ],

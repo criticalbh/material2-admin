@@ -10,7 +10,7 @@ import {TemplatePortal, PortalHostDirective} from '@angular/material';
 })
 export class NgDialogHeaderRightHost implements OnInit {
     @ViewChild(PortalHostDirective) _portalHost: PortalHostDirective;
-    @Input('content') _content: TemplatePortal;
+    @Input('content') _content: TemplatePortal<any>;
 
     constructor() {
 

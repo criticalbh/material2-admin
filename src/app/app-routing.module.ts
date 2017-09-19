@@ -4,7 +4,6 @@ import {SelectivePreloadingStrategy} from './selective-preloading-strategy';
 import {NgModule} from '@angular/core';
 import {PageNotFoundComponent} from './not-found.component';
 import {ButtonsComponent} from './buttons/buttons.component';
-import {GalleryComponent} from './gallery/gallery.component';
 import {DialogComponent} from './dialog/dialog.component';
 const appRoutes: Routes = [
   {
@@ -15,10 +14,6 @@ const appRoutes: Routes = [
   {
     path: 'buttons',
     component: ButtonsComponent,
-  },
-  {
-    path: 'gallery',
-    component: GalleryComponent,
   },
   {
     path: 'dialog',
