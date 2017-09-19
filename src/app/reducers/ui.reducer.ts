@@ -16,6 +16,12 @@ export function reducer(state = initialState, action: uiActions.Actions): State 
         sidebarOpen: !state.sidebarOpen,
       };
     }
+    case uiActions.HIDE_SIDEBAR: {
+      return {
+        ...state,
+        sidebarOpen: false,
+      };
+    }
     default: {
       return state;
     }

@@ -39,6 +39,10 @@ export class MainComponent implements OnInit, OnDestroy {
     }
   }
 
+  hideSidenav() {
+    this.store.dispatch(new uiActions.HideSidebarAction());
+  }
+
   onToggleSidenav() {
     this.store.dispatch(new uiActions.ToggleSidebarAction());
   }
