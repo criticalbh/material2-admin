@@ -1,61 +1,32 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import 'hammerjs';
 import {AppComponent} from './app.component';
-import {
-  MdButtonModule,
-  MdSidenavModule,
-  MdToolbarModule,
-  MdMenuModule,
-  MdIconModule,
-  MdListModule, MdCardModule, MdGridListModule, MdDialogModule
-} from '@angular/material';
-import {DashboardComponent} from './dashboard/dashboard.component';
 import {AppRoutingModule} from './app-routing.module';
-import {PageNotFoundComponent} from './not-found.component';
-import {ButtonsComponent} from './buttons/buttons.component';
-import {ChartsModule} from 'ng2-charts';
-import {NgDialogModule} from './ng-dialog/ng-dialog.module';
-import { DialogComponent } from './dialog/dialog.component';
-import { DialogBoxComponent } from './dialog/dialog-box/dialog-box.component';
-import { StandardDialogComponent } from './dialog/standard-dialog/standard-dialog.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import {PageNotFoundComponent} from "./not-found.component";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {RouterStoreModule} from "@ngrx/router-store";
+import {reducer} from "./reducers/index";
+import {StoreModule} from "@ngrx/store";
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     PageNotFoundComponent,
-    ButtonsComponent,
-    DialogComponent,
-    DialogBoxComponent,
-    StandardDialogComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    BrowserAnimationsModule,
     HttpModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    ChartsModule,
-    MdButtonModule,
-    MdSidenavModule,
-    MdToolbarModule,
-    MdMenuModule,
-    MdIconModule,
-    MdListModule,
-    MdCardModule,
-    MdDialogModule,
-    MdGridListModule,
-    NgDialogModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterStoreModule.connectRouter(),
+    StoreModule.provideStore(reducer),
   ],
-  entryComponents: [DialogBoxComponent, StandardDialogComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }

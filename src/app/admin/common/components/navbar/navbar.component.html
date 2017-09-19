@@ -1,0 +1,29 @@
+<md-toolbar color="primary" class="navbar">
+  <button md-icon-button (click)="toggleSidenav.emit()">
+    <md-icon>menu</md-icon>
+  </button>
+
+  <a routerLink="/" class="valign-wrapper" style="text-decoration: none; color: white;">
+    App
+  </a>
+
+  <span class="app-toolbar-filler"></span>
+
+  <button md-icon-button [mdMenuTriggerFor]="menu"
+          class="side-button">
+    <md-icon
+      class="menu-button">
+      person
+    </md-icon>
+  </button>
+  <md-menu #menu="mdMenu">
+    <button md-menu-item>
+      <md-icon>person</md-icon>
+      <span>Profile</span>
+    </button>
+    <button md-menu-item (click)="logout.emit()">
+      <md-icon>directions</md-icon>
+      <span>Logout</span>
+    </button>
+  </md-menu>
+</md-toolbar>

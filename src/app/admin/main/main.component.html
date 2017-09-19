@@ -1,0 +1,9 @@
+<md-sidenav-container fullscreen>
+  <app-navbar (toggleSidenav)="onToggleSidenav()"></app-navbar>
+  <md-sidenav [mode]="isLargeScreen ? 'side' : 'over'" [opened]="isLargeScreen && ($sideOpen | async)" class="sidenav">
+    <app-sidebar></app-sidebar>
+  </md-sidenav>
+  <div style="padding: 20px;">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>

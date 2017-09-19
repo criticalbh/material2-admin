@@ -1,32 +1,25 @@
-import {Routes, RouterModule} from '@angular/router';
-import {DashboardComponent} from './dashboard/dashboard.component';
+import {RouterModule, Routes} from '@angular/router';
 import {SelectivePreloadingStrategy} from './selective-preloading-strategy';
 import {NgModule} from '@angular/core';
 import {PageNotFoundComponent} from './not-found.component';
-import {ButtonsComponent} from './buttons/buttons.component';
-import {DialogComponent} from './dialog/dialog.component';
-const appRoutes: Routes = [
+
+
+const routes: Routes = [
   {
-    path: 'home',
-    component: DashboardComponent,
-    // outlet: 'popup'
+    path: '',
+    loadChildren: 'app/admin/admin.module#AdminModule',
   },
   {
-    path: 'buttons',
-    component: ButtonsComponent,
+    path: 'login',
+    loadChildren: 'app/auth/auth.module#AuthModule',
   },
-  {
-    path: 'dialog',
-    component: DialogComponent,
-  },
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent }
+  {path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(
-      appRoutes,
+      routes,
       {preloadingStrategy: SelectivePreloadingStrategy}
     )
   ],
